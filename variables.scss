@@ -1,0 +1,60 @@
+/*variables*/
+
+$colorUno: #000000;
+$colorDos: #FFF600;
+$colorTres: #FFFFFF;
+$espacio:10px;
+$margen:10px;
+$borde:8px;
+$tipografia1:"Grechen Fuemen",
+cursive;
+$tipografiageneral:'Shadows Into Light',
+cursive;
+$tamaño1:4rem;
+$fuente:normal;
+$estilofuente:italic;
+$ali-cent:center;
+h1 {
+    color: $colorUno;
+    margin: $margen;
+    padding: $espacio;
+    border: $borde;
+    font-family: $tipografia1;
+    font-weight: $fuente;
+    font-style: $estilofuente;
+    font-size: $tamaño1;
+    text-align: $ali-cent;
+}
+
+
+/* agregando color, margen, espacio y borde al h2 */
+
+h2 {
+    color: $colorDos;
+    margin: $margen;
+    padding: $espacio;
+    border: $borde;
+    font-family: $tipografiageneral;
+}
+
+
+/* agregando color, margen, espacio y borde al h3 */
+
+h3 {
+    color: $colorUno;
+    margin: $margen;
+    padding: $espacio;
+    border: $borde;
+    font-family: $tipografiageneral;
+}
+
+
+/* agregando color, margen, espacio y borde al h4 */
+
+h4 {
+    margin: $margen;
+    padding: $espacio;
+    border: $borde;
+    color: $colorTres;
+    font-family: $tipografiageneral;
+}

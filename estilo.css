@@ -1,0 +1,274 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*importando variables*/
+/*variables*/
+h1 {
+  color: #000000;
+  margin: 10px;
+  padding: 10px;
+  border: 8px;
+  font-family: "Grechen Fuemen", cursive;
+  font-weight: normal;
+  font-style: italic;
+  font-size: 4rem;
+  text-align: center;
+}
+
+/* agregando color, margen, espacio y borde al h2 */
+h2 {
+  color: #FFF600;
+  margin: 10px;
+  padding: 10px;
+  border: 8px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* agregando color, margen, espacio y borde al h3 */
+h3 {
+  color: #000000;
+  margin: 10px;
+  padding: 10px;
+  border: 8px;
+  font-family: "Shadows Into Light", cursive;
+}
+
+/* agregando color, margen, espacio y borde al h4 */
+h4 {
+  margin: 10px;
+  padding: 10px;
+  border: 8px;
+  color: #FFFFFF;
+  font-family: "Shadows Into Light", cursive;
+}
+
+body {
+  background-image: url(imagenes/fondo-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* ----- GRID ----- */
+  /* ----- áreas del layout ----- */
+}
+body .contenedor {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "header" "nav" "main" "footer";
+}
+body #header {
+  grid-area: header;
+}
+body #nav {
+  grid-area: nav;
+}
+body #main {
+  grid-area: main;
+}
+body #footer {
+  grid-area: footer;
+}
+body body {
+  overflow-x: hidden;
+}
+
+/* ----- media queries ----- */
+@media (max-width: 320px) {
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+@media (max-width: 520px) {
+  .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  #header .encabezado {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1.5rem 2rem;
+  }
+  #header .encabezado h1 {
+    font-size: 5vw;
+  }
+}
+#nav {
+  vertical-align: baseline;
+  width: 100vw;
+  height: 7rem;
+  padding-right: 1rem;
+}
+
+#nav ul li {
+  padding-left: 4rem;
+  padding-right: 2rem;
+}
+
+#main {
+  width: 100vw;
+  height: auto;
+}
+
+#main .video {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 4rem;
+  font-weight: 1.5rem;
+}
+
+#footer .footer-comentarios {
+  width: 8rem;
+}
+
+@media (min-width: 1024px) {
+  .main .body {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+}
+.main #nav ul li {
+  padding-left: 5rem;
+  padding-right: 2rem;
+}
+.main #main .video {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 9rem;
+}
+.main #main.caja1 {
+  width: 50rem;
+  height: 50rem;
+}
+.main #body {
+  justify-content: space-around;
+  padding: 2rem 1rem;
+  line-height: 4rem;
+}
+.main #main {
+  line-height: 2.5rem;
+}
+
+html {
+  font-size: 75%;
+}
+
+body {
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0.5rem;
+  grid-area: mmenu;
+  display: flex;
+  justify-content: end;
+}
+.menu li {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  grid-area: menu li;
+  background-color: yellow;
+}
+.menu li a {
+  text-decoration: none;
+  color: black;
+}
+.menu li:hover {
+  background-color: red;
+}
+
+.hamburger-style {
+  border: none;
+  text-align: center;
+}
+
+.aparecer {
+  margin: 50px;
+  animation-duration: 8s;
+  animation-name: aparecer;
+  animation-iteration-count: infinite;
+  justify-content: flex-start;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+image {
+  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.banda {
+  background-image: banda;
+}
+
+.queen-1 {
+  background-image: queen-1;
+}
+
+.queen-2 {
+  background-image: queen-2;
+}
+
+.queen-3 {
+  background-image: queen-3;
+}
+
+.queen-4 {
+  background-image: queen-4;
+}
+
+.queenn {
+  background-image: queenn;
+}
+
+.img-fondo-2 {
+  background-image: fondo-2;
+}
+
+/* transicion a la caja*/
+.caja1 {
+  margin: 10px;
+  padding: 10px;
+  border-top: 20%;
+  background-color: black;
+  width: 10vw;
+  height: 20vw;
+  position: relative;
+  float: none;
+  transition: height 2s, width 1s;
+}
+.caja1:hover {
+  height: 400px;
+  width: 600px;
+  background-color: red;
+}
+
+.main {
+  position: relative;
+  height: 100vh;
+}
+
+/*# sourceMappingURL=estilo.css.map */
