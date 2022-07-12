@@ -1,15 +1,14 @@
+/*importando variables*/
+
+@import "variables";
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
-/*importando variables*/
-
-@import "variables";
 body {
-    background-image: url(imagenes/fondo-1.jpg);
+    background-image: url(./fotos/fondo-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /* ----- GRID ----- */
@@ -40,17 +39,97 @@ body {
 
 /* ----- media queries ----- */
 
-@media (max-width: 320px) {
+@media (min-width: 320px) {
     .body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
+    #main .video-queen {
+        margin: 0rem;
+        padding-right: 1rem 0rem;
+    }
+}
+
+#header .navBar {
+    width: 100vw;
+    height: 6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.font-Xl {
+    font-size: 2.4rem;
+}
+
+.font-L {
+    font-size: 2rem;
+}
+
+.font-M {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.font-S {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.font-Xs {
+    font-size: 1.2rem;
+}
+
+.textLeft {
+    text-align: left;
+}
+
+//mixins
+@mixin flex($flex-flow, $justify, $align) {
+    display: flex;
+    flex-flow: $flex-flow;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex_($flex-flow, $justify) {
+    display: flex;
+    flex-flow: $flex-flow;
+    justify-content: $justify;
+}
+
+@mixin borde($style, $width, $radius, $bgColor) {
+    border-style: $style;
+    border-width: $width;
+    border-radius: $radius;
+    background-color: $bgColor;
+}
+
+// map
+$paleta: ( 'uno': #FFFFFF, 'dos': #ffc105, 'tres': #f5f7f8, 'cuatro': #07070780, 'cinco': rgba(32, 33, 36, 1), );
+//extends
+.btn {
+    margin-right: 1.5rem;
+    padding: 0rem 2rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.redondeado {
+    @extend .btn;
+    width: 28rem;
+    margin-top: 2rem;
+    @include borde (solid, 1px, 1rem, rgba(32, 33, 36, 0.1));
+    background-color: "";
 }
 
 @media (max-width: 520px) {
-    .body {
+    #body {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        width: 100vw;
+        padding: 1rem 4rem;
     }
     #header .encabezado {
         display: flex;
@@ -60,44 +139,36 @@ body {
             font-size: 5vw;
         }
     }
+    #main .video-queen {
+        width: 6rem;
+        padding: 1rem 5rem;
+    }
 }
 
-#nav {
-    vertical-align: baseline;
-    width: 100vw;
-    height: 7rem;
-    padding-right: 1rem;
-}
-
-#nav ul li {
-    padding-left: 4rem;
-    padding-right: 2rem;
-}
-
-#main {
-    width: 100vw;
-    height: auto;
-}
-
-#main .video {
-    width: 100vw;
-    height: auto;
-    display: flex;
-    flex-flow: row wrap;
-    padding: 4rem;
-    font-weight: 1.5rem;
-}
-
-#footer .footer-comentarios {
-    width: 8rem;
-}
-
-.main {
-    @media (min-width: 1024px) {
-        .body {
-            grid-template-columns: 1fr;
-            grid-template-rows: auto;
+@media (max-width: 720px) {
+    #body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        width: 100vw;
+    }
+    #header .encabezado {
+        display: flex;
+        flex-direction: row-reverse;
+        padding: 1.5rem 2rem;
+        h1 {
+            font-size: 5vw;
         }
+    }
+    #main .video-queen {
+        margin-left: 8rem;
+        padding: 1rem 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
     #nav ul li {
         padding-left: 5rem;
@@ -126,18 +197,10 @@ html {
     font-size: 75%;
 }
 
-body {
-    overflow-x: hidden;
-    height: 100%;
-    width: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
 .menu {
     list-style-type: none;
     margin: 0.5rem;
-    grid-area: mmenu;
+    grid-area: menu;
     display: flex;
     justify-content: end;
     li {
@@ -181,14 +244,6 @@ body {
     }
 }
 
-image {
-    margin: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    gap: 10px;
-}
-
 .banda {
     background-image: banda;
 }
@@ -217,6 +272,10 @@ image {
     background-image: fondo-2;
 }
 
+.video-queen {
+    width: 6rem;
+}
+
 
 /* transicion a la caja*/
 
@@ -226,18 +285,13 @@ image {
     border-top: 20%;
     background-color: black;
     width: 10vw;
-    height: 20vw;
+    height: 10vw;
     position: relative;
-    float: none;
+    float: inline-start;
     transition: height 2s, width 1s;
     &:hover {
         height: 400px;
-        width: 600px;
+        width: 400px;
         background-color: red;
     }
-}
-
-.main {
-    position: relative;
-    height: 100vh;
 }
